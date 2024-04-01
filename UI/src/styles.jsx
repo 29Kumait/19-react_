@@ -14,6 +14,10 @@ const styles = stylex.create({
       "@media (min-width: 1540px)": 1366,
     },
   },
+  img: {
+    width: 29,
+    height: "auto",
+  },
 });
 
 export default styles;
