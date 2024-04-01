@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/19-react_/",
+  base: process.env.NODE_ENV === "production" ? "/<repository-name>/" : "/",
   server: {
     port: 8080,
   },
