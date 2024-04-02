@@ -2,7 +2,7 @@ import stylex from "@stylexjs/stylex";
 import styles from "../styles.jsx";
 import Register from "../Components/Registers/Register.jsx";
 import img from "../assets/img.svg";
-import key from "../../public/key.svg";
+import key from "../assets/key.svg";
 import Login from "../Components/Registers/Login.jsx";
 import Submitting from "../Components/Submit/Submitting.jsx";
 
