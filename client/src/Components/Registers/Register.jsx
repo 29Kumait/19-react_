@@ -1,8 +1,8 @@
-import {useRef} from 'react';
+import { useRef } from 'react';
 import { useFormState } from 'react-dom';
 import stylex from '@stylexjs/stylex';
 import styles from '../../styles.jsx';
-import {FetchSignUp} from './FetchSign.server';
+import { FetchSignUp } from './FetchSign.server.jsx';
 
 const stylesRegister = stylex.create({
     form: {
@@ -36,7 +36,7 @@ export default function Register() {
         const password = formData.get("password");
         const username = formData.get("username");
         try {
-            const {token} = await FetchSignUp({email, password, username});
+            const { token } = await FetchSignUp({ email, password, username });
             alert(`Registration successful, token: ${token}`);
             formRef.current.reset();
         } catch (error) {
@@ -49,9 +49,9 @@ export default function Register() {
     return (
         <form action={formAction} ref={formRef} {...stylex.props(stylesRegister.form)} >
             <input type="text" name="username" required
-                   placeholder="Username" {...stylex.props(stylesRegister.input)} />
+                placeholder="Username" {...stylex.props(stylesRegister.input)} />
             <input type="email" name="email" required placeholder="Email" {...stylex.props(stylesRegister.input)} />
-            <input type="password" name="password" required placeholder="Password" {...stylex.props(stylesRegister.input)}/>
+            <input type="password" name="password" required placeholder="Password" {...stylex.props(stylesRegister.input)} />
             <button type="submit" {...stylex.props(styles.button)}>Sign Up</button>
             {!!formState && <p>{formState}</p>}
         </form>
