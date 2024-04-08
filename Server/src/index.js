@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import app from "./app.js";
 import { logInfo, logError } from "./util/logging.js";
 import connectDB from "./db/connectDB.js";
+
 dotenv.config();
 const port = process.env.PORT;
 
@@ -14,5 +15,3 @@ const startServer = async () => {
   }
 };
 startServer();
-
-export default app;
