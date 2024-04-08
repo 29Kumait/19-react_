@@ -1,8 +1,13 @@
-import { useFormState } from "react-dom";
-import { FetchSignIn } from "./FetchSign.server.jsx";
+import { useActionState } from "react";
+import { useNavigate } from "react-router-dom";
 import stylex from "@stylexjs/stylex";
 import styles from "../../styles.jsx";
+import { FetchSignIn } from "./FetchSign.server.jsx";
+
+
 export default function Login() {
+  const navigate = useNavigate();
+
   async function LoginRequest(prevState, formData) {
     "use server";
     const username = formData.get("username");
@@ -10,15 +15,17 @@ export default function Login() {
     try {
       const { token } = await FetchSignIn({ username, password });
       if (!token) {
-        return "failed";
+        return "Login failed";
       }
-      return "logged in successfully";
+
+      navigate('/page-login');
+      return "Logged in successfully";
     } catch (error) {
       return error.toString();
     }
   }
 
-  const [formState, action] = useFormState(LoginRequest, null);
+  const [formState, action] = useActionState(LoginRequest, null);
 
   return (
     <>

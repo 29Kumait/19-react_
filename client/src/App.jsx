@@ -1,6 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as stylex from "@stylexjs/stylex";
 import styles from "./styles.jsx";
 import Page from "./Pages/Page.jsx";
+import PageLogin from "./Pages/PageLogin.jsx";
+
 const styleApp = stylex.create({
   text: {
     color: "#4b51b7",
@@ -30,7 +33,12 @@ function App() {
     <div {...stylex.props(styles.base)}>
       <h1 {...stylex.props(styleApp.text)}>Test</h1>
 
-        <Page />
+      <Router> {/* Wrap your Routes within Router */}
+        <Routes>
+          <Route path="/" element={<Page />} />
+          <Route path="/page-login" element={<PageLogin />} />
+        </Routes>
+      </Router>
     </div>
 
   );

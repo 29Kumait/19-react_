@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useFormState } from 'react-dom';
+import { useActionState } from "react";
 import stylex from '@stylexjs/stylex';
 import styles from '../../styles.jsx';
 import { FetchSignUp } from './FetchSign.server.jsx';
@@ -44,7 +44,7 @@ export default function Register() {
         }
     }
 
-    const [formState, formAction] = useFormState(redirecting, null);
+    const [formState, formAction] = useActionState(redirecting, null);
 
     return (
         <form action={formAction} ref={formRef} {...stylex.props(stylesRegister.form)} >

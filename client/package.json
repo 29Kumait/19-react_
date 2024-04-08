@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.5.1",
-    "react": "^19.0.0-canary-a73c3450e-20240329",
-    "react-dom": "^19.0.0-canary-a73c3450e-20240329",
+    "react": "^19.0.0-canary-4c12339ce-20240408",
+    "react-dom": "^19.0.0-canary-4c12339ce-20240408",
+    "react-router-dom": "^6.22.3",
     "vite-plugin-stylex": "^0.8.2"
   },
   "devDependencies": {
