@@ -13,7 +13,6 @@ const startServer = async () => {
     logError(error);
   }
 };
-
 startServer();
 
 export default app;
