@@ -1,9 +1,10 @@
+import Log from "../Components/New/Log.jsx";
 const PageLogin = () => {
-    return (
-        <div>
-            <h1>Login Page</h1>
-        </div>
-    );
-}
+  return (
+    <div>
+      <Log />
+    </div>
+  );
+};
 
-export default PageLogin;  
+export default PageLogin;

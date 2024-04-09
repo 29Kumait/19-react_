@@ -4,7 +4,6 @@ import stylex from "@stylexjs/stylex";
 import styles from "../../styles.jsx";
 import { FetchSignIn } from "./FetchSign.server.jsx";
 
-
 export default function Login() {
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ export default function Login() {
         return "Login failed";
       }
 
-      navigate('/page-login');
+      navigate("/page-login");
       return "Logged in successfully";
     } catch (error) {
       return error.toString();
