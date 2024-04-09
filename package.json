@@ -1,20 +1,35 @@
 {
   "name": "react-19",
   "version": "1.0.0",
-  "description": "",
+  "description": "A modern React web application with a Node.js server backend.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run start --prefix server\" \"npm run dev --prefix client\"",
+    "start": "concurrently \"npm run start --prefix server\" \"npm run start --prefix client\"",
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "install-all": "npm install && npm run install-server && npm run install-client",
     "install-server": "cd server && npm install",
-    "install-client": "cd client && npm install"
+    "install-client": "cd client && npm install",
+    "lint": "eslint '**/*.js'",
+    "build": "npm run build --prefix client"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "node.js",
+    "fullstack",
+    "web application"
+  ],
+  "author": " ",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "eslint": "^7.32.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.22.3"
   }
 }
